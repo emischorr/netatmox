@@ -11,7 +11,12 @@ defmodule Netatmox.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       package: package(),
-      source_url: "https://github.com/emischorr/netatmox"
+      source_url: "https://github.com/emischorr/netatmox",
+      docs: [
+        main: "Netatmox", # The main page in the docs
+        # logo: "path/to/logo.png",
+        extras: ["README.md"]
+      ]
     ]
   end
 
@@ -28,7 +33,8 @@ defmodule Netatmox.MixProject do
       {:tesla, "~> 1.4"},
       {:jason, ">= 1.0.0"},
       {:mint, "~> 1.0"},
-      {:castore, "~> 1.0"}
+      {:castore, "~> 1.0"},
+      {:ex_doc, "~> 0.31", only: :dev, runtime: false}
     ]
   end
 
@@ -36,8 +42,7 @@ defmodule Netatmox.MixProject do
     [
       name: "netatmox",
       # These are the default files included in the package
-      files: ~w(lib priv .formatter.exs mix.exs README* readme* LICENSE*
-                license* CHANGELOG* changelog* src),
+      files: ~w(lib .formatter.exs mix.exs README* LICENSE*),
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/emischorr/netatmox"}
     ]
