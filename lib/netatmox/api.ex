@@ -57,14 +57,14 @@ defmodule Netatmox.Api do
     }
 
     case post(Endpoints.token(), body) do
-      {:ok, %Tesla.Env{:body => body}} when is_map(body) -> {:ok, body}
+      {:ok, %Tesla.Env{status: 200, body: body}} -> {:ok, body}
       error -> {:error, error}
     end
   end
 
   def station_data(access_token) do
     case get(Endpoints.station_data(), headers: [{"Authorization", "Bearer #{access_token}"}]) do
-      {:ok, %Tesla.Env{:body => body}} when is_map(body) -> {:ok, body}
+      {:ok, %Tesla.Env{status: 200, body: body}} -> {:ok, body}
       error -> {:error, error}
     end
   end

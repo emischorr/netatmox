@@ -4,7 +4,7 @@ defmodule Netatmox.MixProject do
   def project do
     [
       app: :netatmox,
-      version: "0.1.0",
+      version: "0.1.1",
       name: "netatmox",
       description: "A wrapper for the Netatmo Weather Station API",
       elixir: "~> 1.15",
